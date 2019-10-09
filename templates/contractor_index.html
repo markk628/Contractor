@@ -1,12 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+</head>
 <center>
     <h1>Sock Flavors</h1>
 </center>
-<div class="row">
-    <a href='/products/<product_id>'>
-        <center><img src='/static/images/pineapple.jpg'></center>
-    </a>
-</div>
+<center>
+<body>
+    <div class="img">
+        <a href='/products/<product_id>'>
+            <img src='/static/images/pineapple.jpg' >
+        </a>
+        <br>
+        <a href='/products/<product_id>'>
+            <img src='/static/images/grape.jpg'>
+        </a>
+        <br>
+        <a href='/products/<product_id>'>
+            <img src='/static/images/pizza.jpg'>
+        </a>
+        <br>
+        <a href='/products/<product_id>'>
+            <img src='/static/images/steak.jpg'>
+        </a>
+    </div>
+</body>
+</center>
 {% endblock %}
