@@ -1,21 +1,21 @@
-<!-- <fieldset>
-    <legend>Edit Playlist</legend> -->
+<fieldset>
+    <legend>Add Item</legend>
     <!-- TITLE -->
-    <!-- <div class='form-group'>
-        <label for='product-title'>Title</label><br>
+    <div class='form-group'>
+        <label for='product-title'>Flavor</label><br>
         <input class='form-control' id='product-title' type='text' name='title' value='{{ products.title }}'/>
-    </div> -->
-
-    <!-- DESCRIPTION -->
-    <!-- <div class='form-group'>
-        <label for='description'>Description</label><br>
-        <input class='form-control' id='description' type='text' name='description' value='{{ products.description }}' />
-    </div> -->
-
-    <!-- DESCRIPTION -->
-    <!-- <div class='form-group'>
-        <label for='product-videos'>Videos</label><br/>
-        <p class='text-muted'>Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
-        <textarea class='form-control' id='product-videos' name='videos' rows='10' />{{ "\n".join(products.videos) }}</textarea>
     </div>
-</fieldset> -->
+
+    <!-- DESCRIPTION -->
+    <div class='form-group'>
+        <label for='price'>Price</label><br>
+        <input class='form-control' id='price' type='text' name='price' value='{{ products.price }}' />
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class='form-group'>
+        <label for='picture'>Picture</label><br/>
+        <p class='text-muted'>Add picture URL'.</p>
+        <textarea class='form-control' id='product-picture' name='picture' rows='10' />{{ "\n".join(products.picture) }}</textarea>
+    </div>
+</fieldset>

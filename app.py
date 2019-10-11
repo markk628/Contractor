@@ -9,7 +9,13 @@ client=MongoClient()
 db = client.contractor
 # db = client.get_default_database()
 products = db.products
-comments = db.comments
+price = db.price
+products.drop()
+products.insert_one({'title': 'Pineapple', 'img': '/static/images/pineapple.jpg'})
+products.insert_one({'title': 'Grape', 'img': '/static/images/grape.jpg'})
+products.insert_one({'title': 'Pizza', 'img': '/static/images/pizza.jpg'})
+products.insert_one({'title': 'Steak', 'img': '/static/images/steak.jpg'})
+
 
 app = Flask(__name__)
 
@@ -17,15 +23,16 @@ app = Flask(__name__)
 def contractor_index():
     return render_template('contractor_index.html', products=products.find())
 
-@app.route('/cart')
+@app.route('/products/new')
 def contractor_new():
-    return render_template('contractor_new.html', products={}, title='Your Cart')
+    return render_template('contractor_new.html', products={}, title='New Item')
 
 @app.route('/products', methods=['POST'])
-def playlists_submit():
+def contractor_submit():
     product = {
         'title': request.form.get('title'),
-        'description': request.form.get('description'),
+        'price': request.form.get('price'),
+        'picture': request.form.get('picture')
     }
     print(product)
     product_id = products.insert_one(product).inserted_id
@@ -34,10 +41,8 @@ def playlists_submit():
 @app.route('/products/<product_id>')
 def contractor_show(product_id):
     product = products.find_one({'_id': ObjectId(product_id)})
-    product_comments = comments.find({'product_id': ObjectId(product_id)})
-    return render_template('contractor_show.html', product=product, comments=product_comments)
-
-
+    # product_price = price.find({'product_id': ObjectId(product_id)})
+    return render_template('flavors.html', product=product)
 
 if __name__ == '__main__':
-  app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
+  app.run(debug=True)

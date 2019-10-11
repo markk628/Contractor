@@ -9,23 +9,15 @@
 </center>
 <center>
 <body>
-    <div class="img">
-        <a href='/products/<product_id>'>
-            <img src='/static/images/pineapple.jpg' >
-        </a>
-        <br>
-        <a href='/products/<product_id>'>
-            <img src='/static/images/grape.jpg'>
-        </a>
-        <br>
-        <a href='/products/<product_id>'>
-            <img src='/static/images/pizza.jpg'>
-        </a>
-        <br>
-        <a href='/products/<product_id>'>
-            <img src='/static/images/steak.jpg'>
-        </a>
+<div class="img">
+{% for product in products %}
+    <div>
+        <a href='/products/{{product._id}}'>
+        <img src="{{product.img}}">
     </div>
+
+{% endfor %}
+</div>
 </body>
 </center>
 {% endblock %}

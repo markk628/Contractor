@@ -4,3 +4,38 @@
 <a href='/'>
     <button type="button" class="btn btn-primary">Back to Home</button>
 </a>
+
+<link rel='stylesheet' href="https://bootswatch.com/4/lux/bootstrap.min.css">
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <h1>{{ product.title }}</h1>
+        {% if product.created_at %}
+        <p class='text-muted'>Created on {{ product.created_at.strftime('%A, %d %B, %Y') }}
+            at {{ product.created_at.strftime('%I:%M %p') }}</p>
+        {% endif %}
+        <h2>{{ product.description }}</h2>
+        {% for picture in product.pictures %}
+            <div class="card"><div class="card-body">
+                <iframe width="420" height="315" src="{{ video }}"></iframe>
+            </div></div>
+        {% endfor %}
+        <p><a href='/products/{{ product._id }}/edit'>
+            <button type="button" class="btn btn-primary">Edit</button>
+        </a></p>
+        <p><form method='POST' action='/products/{{product._id}}/delete'>
+            <input type='hidden' name='_method' value='DELETE'>
+            <button class='btn btn-primary' type='submit'>Delete</button>
+        </form></p>
+
+        <hr>
+
+        <!-- Comment form -->
+        <!-- {% include 'partials/comment_form.html' %} -->
+        <hr>
+
+        <!-- Show Comments -->
+        <!-- {% for comment in comments %}
+            {% include 'partials/comment.html' %}
+        {% endfor %} -->
+    </div>
+</div>
