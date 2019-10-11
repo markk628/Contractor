@@ -19,10 +19,12 @@ products.insert_one({'title': 'Steak', 'price': '$4', 'img': '/static/images/ste
 
 app = Flask(__name__)
 
+# home page
 @app.route('/')
 def contractor_index():
     return render_template('contractor_index.html', products=products.find())
 
+# create flavor page
 @app.route('/products/new')
 def contractor_new():
     return render_template('contractor_new.html', product={}, title='New Item')
