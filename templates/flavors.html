@@ -3,12 +3,18 @@
 {% block content %}
 <head>
     <title>{{product.title}}</title>
-    <link rel="stylesheet" type="text/css" href="/static/index.css">
+    <a href='/'>
+        <button type="button" class="btn btn-primary">Back to Home</button>
+    </a>
 </head>
 <body>
     <h1>{{product.title}}</h1>
     <div class="img">
         <img src="{{product.img}}">
+    </div>
+    <h2>{{product.price}}</h2>
+    <div class='form-group'>
+        <button class='btn btn-primary' type='submit'>Add To Cart</button>
     </div>
 </body>
 

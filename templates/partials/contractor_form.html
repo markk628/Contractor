@@ -3,19 +3,19 @@
     <!-- TITLE -->
     <div class='form-group'>
         <label for='product-title'>Flavor</label><br>
-        <input class='form-control' id='product-title' type='text' name='title' value='{{ products.title }}'/>
+        <input class='form-control' id='product.title' type='text' name='title' value='{{ product.title }}'/>
     </div>
 
-    <!-- DESCRIPTION -->
+    <!-- price -->
     <div class='form-group'>
         <label for='price'>Price</label><br>
-        <input class='form-control' id='price' type='text' name='price' value='{{ products.price }}' />
+        <input class='form-control' id='price' type='text' name='price' value='{{ product.price }}' />
     </div>
 
-    <!-- DESCRIPTION -->
+    <!-- picture -->
     <div class='form-group'>
         <label for='picture'>Picture</label><br/>
         <p class='text-muted'>Add picture URL'.</p>
-        <textarea class='form-control' id='product-picture' name='picture' rows='10' />{{ "\n".join(products.picture) }}</textarea>
+        <textarea class='form-control' id='product.img' name='img' rows='10' />{{ "\n".join(product.img) }}</textarea>
     </div>
 </fieldset>
