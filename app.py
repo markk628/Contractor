@@ -44,15 +44,27 @@ def contractor_show(product_id):
     # product_price = price.find({'product_id': ObjectId(product_id)})
     return render_template('flavors.html', product=product)
 
+@app.route('/products/<product_id>', methods=['POST'])
+def products_update(product_id):
+    updated_product = {
+        'title': request.form.get('title'),
+        'price': request.form.get('price'),
+        'img': request.form.get('img')
+    }
+    products.update_one(
+        {'_id': ObjectId(product_id)},
+        {'$set': updated_product})
+    return redirect(url_for('contractor_show', product_id=product_id))
+
 @app.route('/products/<product_id>/edit')
 def playlists_edit(product_id):
     product = products.find_one({'_id': ObjectId(product_id)})
-    return render_template('product_edit.html', product=product, title='Edit Socks')
+    return render_template('contractor_edit.html', product=product, title='Edit Socks')
 
 @app.route('/products/<product_id>/delete', methods=['POST'])
 def playlists_delete(product_id):
     products.delete_one({'_id': ObjectId(product_id)})
-    return redirect(url_for('products_index'))
+    return redirect(url_for('contractor_index'))
 
 if __name__ == '__main__':
   app.run(debug=True)
