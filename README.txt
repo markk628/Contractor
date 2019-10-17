@@ -1,5 +1,7 @@
 Hello
 
+I used the playlister project as a reference to complete contractor
+
 Welcome to my edible socks store
 
 You are able to create a new flavored sock by clicking New Item on the top right

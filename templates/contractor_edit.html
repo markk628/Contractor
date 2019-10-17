@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+# includes contractor_form because contractor_form is the file that runs the code to 
+# edit items
 <div class='row'>
     <div class='col-sm-6 col-sm-offset-3'>
         <form method='POST' action='/products/{{product._id}}'>

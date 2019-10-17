@@ -1,18 +1,21 @@
 <fieldset>
     <legend>Add Item</legend>
     <!-- flavor -->
+    # after the user enters a flavor in the title bar, that flavor becomes product.title
     <div class='form-group'>
         <label for='product-title'>Flavor</label><br>
         <input class='form-control' id='product.title' type='text' name='title' value='{{ product.title }}'/>
     </div>
 
     <!-- price -->
+    # user can enter any amount of money for the cost of the socks
     <div class='form-group'>
         <label for='price'>Price</label><br>
         <input class='form-control' id='price' type='text' name='price' value='{{ product.price }}' />
     </div>
 
     <!-- picture -->
+    # user can enter the image URL to upload a picture of the socks
     <div class='form-group'>
         <label for='picture'>Picture</label><br/>
         <p class='text-muted'>Add picture URL'.</p>
